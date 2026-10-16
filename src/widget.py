@@ -17,5 +17,5 @@ def mask_account_card(info: str) -> str:
 
 
 def get_date(time: str) -> str:
-    time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%f")
-    return time.strftime("%d.%m.%Y")
+    formated_time = datetime.strptime(time, "%Y-%m-%dT%H:%M:%S.%f")
+    return formated_time.strftime("%d.%m.%Y")
