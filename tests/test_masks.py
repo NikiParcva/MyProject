@@ -1,4 +1,3 @@
-
 import pytest
 
 from masks import get_mask_card_number
@@ -26,6 +25,9 @@ from masks import get_mask_account
         ("1234", "**1234"),
         ("676754321", "**4321"),
         ("00000000", "**0000"),
+        ("12345678901234567890", "**7890"),
+        ("123456780000", "**0000"),
+        ("000012345678", "**5678"),
     ],
 )
 def test_get_mask_account(account_number, expected):
