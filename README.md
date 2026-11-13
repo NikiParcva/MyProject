@@ -15,7 +15,26 @@ poetry install
 
 ## Использование
 
-Функции находятся в модуле `src/processing.py`.
+Функции проекта расположены в директории `src/`.
+
+### Модуль masks.py
+
+Модуль `src/masks.py` содержит функции для маскирования номеров банковских карт и счетов.
+
+- `get_mask_card_number(card_number)` — маскирует номер банковской карты, оставляя видимыми первые 6 и последние 4 цифры.
+- `get_mask_account(account_number)` — маскирует номер банковского счёта, оставляя видимыми последние 4 цифры.
+
+Пример использования:
+
+```python
+from src.masks import get_mask_card_number, get_mask_account
+
+print(get_mask_card_number("1234567890123456"))
+# 1234 56** **** 3456
+
+print(get_mask_account("123456789012"))
+# **9012
+```
 
 ### Модуль masks.py
 
